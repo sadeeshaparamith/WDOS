@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Market Medley",
+    "short_name": "M & M",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,5 +15,8 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
-}
+    "display": "standalone",
+    "start_url": "/index.html",
+    "orientation": "portrait",
+    "description": "Supermarket website"
+
