@@ -61,8 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     saveToFavoritesButton.addEventListener('click', () => {
-        localStorage.setItem('favorites', JSON.stringify(cartItems));
-        alert('Favourites saved!');
+        if (cartItems.length === 0) {
+            alert('The cart is empty. Please add items before saving to favorites.');
+        } else {
+            localStorage.setItem('favorites', JSON.stringify(cartItems));
+            alert('Favorites saved!');
+        }
     });
 
     applyFavoritesButton.addEventListener('click', () => {
@@ -77,8 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     buyNowButton.addEventListener('click', () => {
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        window.location.href = 'order_details.html';
+        if(cartItems.length > 0){
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            window.location.href = 'order_details.html';
+        }else{
+            alert('The cart is empty. Please add items before buying.')
+        }
     });
 });
 
